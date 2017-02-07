@@ -1,25 +1,25 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Formations list</h1>
+    <h1>Titres list</h1>
 
     <table>
         <thead>
             <tr>
-                <th>Formation</th>
+                <th>Titre</th>
                 <th>Id</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-        {% for formation in formations %}
+        {% for titre in titres %}
             <tr>
-                <td><a href="{{ path('formation_show', { 'id': formation.id }) }}">{{ formation.formation }}</a></td>
-                <td>{{ formation.id }}</td>
+                <td><a href="{{ path('titre_show', { 'id': titre.id }) }}">{{ titre.titre }}</a></td>
+                <td>{{ titre.id }}</td>
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('formation_show', { 'id': formation.id }) }}">show</a>
+                            <a href="{{ path('titre_show', { 'id': titre.id }) }}">show</a>
                         </li>
                     </ul>
                 </td>

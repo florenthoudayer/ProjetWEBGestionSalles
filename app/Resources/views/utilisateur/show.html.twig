@@ -14,12 +14,16 @@
                 <td>{{ utilisateur.prenom }}</td>
             </tr>
             <tr>
-                <th>Autorisation</th>
-                <td>{{ utilisateur.autorisation }}</td>
+                <th>Mdp</th>
+                <td>{{ utilisateur.mdp }}</td>
             </tr>
             <tr>
-                <th>Idutilisateur</th>
-                <td>{{ utilisateur.idUtilisateur }}</td>
+                <th>Actif</th>
+                <td>{% if utilisateur.actif %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ utilisateur.id }}</td>
             </tr>
         </tbody>
     </table>
@@ -27,14 +31,6 @@
     <ul>
         <li>
             <a href="{{ path('utilisateur_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('utilisateur_edit', { 'id': utilisateur.idUtilisateur }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
         </li>
     </ul>
 {% endblock %}

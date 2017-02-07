@@ -10,25 +10,22 @@
                 <th>Nbpc</th>
                 <th>Tableau</th>
                 <th>Projecteur</th>
-                <th>Idsalle</th>
+                <th>Id</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for salle in salles %}
             <tr>
-                <td><a href="{{ path('salles_show', { 'id': salle.idSalle }) }}">{{ salle.nom }}</a></td>
+                <td><a href="{{ path('salles_show', { 'id': salle.id }) }}">{{ salle.nom }}</a></td>
                 <td>{{ salle.nbPc }}</td>
                 <td>{% if salle.tableau %}Yes{% else %}No{% endif %}</td>
                 <td>{% if salle.projecteur %}Yes{% else %}No{% endif %}</td>
-                <td>{{ salle.idSalle }}</td>
+                <td>{{ salle.id }}</td>
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('salles_show', { 'id': salle.idSalle }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('salles_edit', { 'id': salle.idSalle }) }}">edit</a>
+                            <a href="{{ path('salles_show', { 'id': salle.id }) }}">show</a>
                         </li>
                     </ul>
                 </td>
@@ -37,9 +34,5 @@
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('salles_new') }}">Create a new salle</a>
-        </li>
-    </ul>
+    
 {% endblock %}

@@ -6,12 +6,12 @@
     <table>
         <tbody>
             <tr>
-                <th>Nom</th>
-                <td>{{ formation.nom }}</td>
+                <th>Formation</th>
+                <td>{{ formation.formation }}</td>
             </tr>
             <tr>
-                <th>Idformation</th>
-                <td>{{ formation.idFormation }}</td>
+                <th>Id</th>
+                <td>{{ formation.id }}</td>
             </tr>
         </tbody>
     </table>
@@ -19,14 +19,6 @@
     <ul>
         <li>
             <a href="{{ path('formation_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('formation_edit', { 'id': formation.idFormation }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
         </li>
     </ul>
 {% endblock %}

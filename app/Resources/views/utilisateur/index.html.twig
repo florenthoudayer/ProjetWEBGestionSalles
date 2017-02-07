@@ -8,25 +8,24 @@
             <tr>
                 <th>Nom</th>
                 <th>Prenom</th>
-                <th>Autorisation</th>
-                <th>Idutilisateur</th>
+                <th>Mdp</th>
+                <th>Actif</th>
+                <th>Id</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for utilisateur in utilisateurs %}
             <tr>
-                <td><a href="{{ path('utilisateur_show', { 'id': utilisateur.idUtilisateur }) }}">{{ utilisateur.nom }}</a></td>
+                <td><a href="{{ path('utilisateur_show', { 'id': utilisateur.id }) }}">{{ utilisateur.nom }}</a></td>
                 <td>{{ utilisateur.prenom }}</td>
-                <td>{{ utilisateur.autorisation }}</td>
-                <td>{{ utilisateur.idUtilisateur }}</td>
+                <td>{{ utilisateur.mdp }}</td>
+                <td>{% if utilisateur.actif %}Yes{% else %}No{% endif %}</td>
+                <td>{{ utilisateur.id }}</td>
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('utilisateur_show', { 'id': utilisateur.idUtilisateur }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('utilisateur_edit', { 'id': utilisateur.idUtilisateur }) }}">edit</a>
+                            <a href="{{ path('utilisateur_show', { 'id': utilisateur.id }) }}">show</a>
                         </li>
                     </ul>
                 </td>
@@ -35,9 +34,5 @@
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('utilisateur_new') }}">Create a new utilisateur</a>
-        </li>
-    </ul>
+    
 {% endblock %}

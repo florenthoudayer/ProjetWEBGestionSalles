@@ -1,24 +1,24 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Matiere</h1>
+    <h1>Titre</h1>
 
     <table>
         <tbody>
             <tr>
-                <th>Matiere</th>
-                <td>{{ matiere.matiere }}</td>
+                <th>Titre</th>
+                <td>{{ titre.titre }}</td>
             </tr>
             <tr>
                 <th>Id</th>
-                <td>{{ matiere.id }}</td>
+                <td>{{ titre.id }}</td>
             </tr>
         </tbody>
     </table>
 
     <ul>
         <li>
-            <a href="{{ path('matiere_index') }}">Back to the list</a>
+            <a href="{{ path('titre_index') }}">Back to the list</a>
         </li>
     </ul>
 {% endblock %}
