@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="gestionBundle\Entity\Matiere" table="matiere">
+    <id name="idMatiere" type="integer" column="id_matiere">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="intitule" type="string" column="intitule" length="25" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <many-to-many field="idUtilisateur" target-entity="Utilisateur" inversed-by="idMatiere" fetch="LAZY">
+      <join-table name="possede">
+        <join-columns>
+          <join-column name="id_matiere" referenced-column-name="id_matiere"/>
+        </join-columns>
+        <inverse-join-columns>
+          <join-column name="id_utilisateur" referenced-column-name="id_utilisateur"/>
+        </inverse-join-columns>
+      </join-table>
+    </many-to-many>
+  </entity>
+</doctrine-mapping>

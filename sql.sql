@@ -8,12 +8,14 @@
 #------------------------------------------------------------
 
 CREATE TABLE utilisateur(
-        id_utilisateur int (11) Auto_increment  NOT NULL ,
-        nom            Varchar (25) ,
-        prenom         Varchar (25) ,
-        autorisation   Varchar (25) ,
-        id_formation   Int ,
-        PRIMARY KEY (id_utilisateur )
+        id           int (11) Auto_increment  NOT NULL ,
+        nom          Varchar (25) ,
+        prenom       Varchar (25) ,
+        mdp          Varchar (25) ,
+        actif        Bool ,
+        id_formation Int ,
+        id_titre     Int ,
+        PRIMARY KEY (id )
 )ENGINE=InnoDB;
 
 
@@ -22,9 +24,9 @@ CREATE TABLE utilisateur(
 #------------------------------------------------------------
 
 CREATE TABLE matiere(
-        id_matiere int (11) Auto_increment  NOT NULL ,
-        intitule   Varchar (25) ,
-        PRIMARY KEY (id_matiere )
+        id      int (11) Auto_increment  NOT NULL ,
+        matiere Varchar (25) ,
+        PRIMARY KEY (id )
 )ENGINE=InnoDB;
 
 
@@ -33,12 +35,12 @@ CREATE TABLE matiere(
 #------------------------------------------------------------
 
 CREATE TABLE salles(
-        id_salle   int (11) Auto_increment  NOT NULL ,
+        id         int (11) Auto_increment  NOT NULL ,
         nom        Varchar (25) ,
         nb_pc      Int ,
         tableau    Bool ,
         projecteur Bool ,
-        PRIMARY KEY (id_salle )
+        PRIMARY KEY (id )
 )ENGINE=InnoDB;
 
 
@@ -47,14 +49,14 @@ CREATE TABLE salles(
 #------------------------------------------------------------
 
 CREATE TABLE reservation(
-        id_reservation int (11) Auto_increment  NOT NULL ,
+        id             int (11) Auto_increment  NOT NULL ,
         date_debut     Date ,
         date_fin       Date ,
-        id_salle       Int ,
+        id_salles      Int ,
         id_formation   Int ,
         id_matiere     Int ,
         id_utilisateur Int ,
-        PRIMARY KEY (id_reservation )
+        PRIMARY KEY (id )
 )ENGINE=InnoDB;
 
 
@@ -63,27 +65,38 @@ CREATE TABLE reservation(
 #------------------------------------------------------------
 
 CREATE TABLE formation(
-        id_formation int (11) Auto_increment  NOT NULL ,
-        nom          Varchar (25) ,
-        PRIMARY KEY (id_formation )
+        id        int (11) Auto_increment  NOT NULL ,
+        formation Varchar (25) ,
+        PRIMARY KEY (id )
 )ENGINE=InnoDB;
 
 
 #------------------------------------------------------------
-# Table: possede
+# Table: titre
 #------------------------------------------------------------
 
-CREATE TABLE possede(
-        id_matiere     Int NOT NULL ,
+CREATE TABLE titre(
+        id    int (11) Auto_increment  NOT NULL ,
+        titre Varchar (25) ,
+        PRIMARY KEY (id )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: forme
+#------------------------------------------------------------
+
+CREATE TABLE forme(
+        id             Int NOT NULL ,
         id_utilisateur Int NOT NULL ,
-        PRIMARY KEY (id_matiere ,id_utilisateur )
+        PRIMARY KEY (id ,id_utilisateur )
 )ENGINE=InnoDB;
 
-ALTER TABLE utilisateur ADD CONSTRAINT FK_utilisateur_id_formation FOREIGN KEY (id_formation) REFERENCES formation(id_formation);
-ALTER TABLE reservation ADD CONSTRAINT FK_reservation_id_salle FOREIGN KEY (id_salle) REFERENCES salles(id_salle);
-ALTER TABLE reservation ADD CONSTRAINT FK_reservation_id_formation FOREIGN KEY (id_formation) REFERENCES formation(id_formation);
-ALTER TABLE reservation ADD CONSTRAINT FK_reservation_id_matiere FOREIGN KEY (id_matiere) REFERENCES matiere(id_matiere);
-ALTER TABLE reservation ADD CONSTRAINT FK_reservation_id_utilisateur FOREIGN KEY (id_utilisateur) REFERENCES utilisateur(id_utilisateur);
-ALTER TABLE possede ADD CONSTRAINT FK_possede_id_matiere FOREIGN KEY (id_matiere) REFERENCES matiere(id_matiere);
-ALTER TABLE possede ADD CONSTRAINT FK_possede_id_utilisateur FOREIGN KEY (id_utilisateur) REFERENCES utilisateur(id_utilisateur);
-
+ALTER TABLE utilisateur ADD CONSTRAINT FK_utilisateur_id_formation FOREIGN KEY (id_formation) REFERENCES formation(id);
+ALTER TABLE utilisateur ADD CONSTRAINT FK_utilisateur_id_titre FOREIGN KEY (id_titre) REFERENCES titre(id);
+ALTER TABLE reservation ADD CONSTRAINT FK_reservation_id_salles FOREIGN KEY (id_salles) REFERENCES salles(id);
+ALTER TABLE reservation ADD CONSTRAINT FK_reservation_id_formation FOREIGN KEY (id_formation) REFERENCES formation(id);
+ALTER TABLE reservation ADD CONSTRAINT FK_reservation_id_matiere FOREIGN KEY (id_matiere) REFERENCES matiere(id);
+ALTER TABLE reservation ADD CONSTRAINT FK_reservation_id_utilisateur FOREIGN KEY (id_utilisateur) REFERENCES utilisateur(id);
+ALTER TABLE forme ADD CONSTRAINT FK_forme_id FOREIGN KEY (id) REFERENCES matiere(id);
+ALTER TABLE forme ADD CONSTRAINT FK_forme_id_utilisateur FOREIGN KEY (id_utilisateur) REFERENCES utilisateur(id);
