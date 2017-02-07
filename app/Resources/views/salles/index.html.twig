@@ -27,6 +27,9 @@
                         <li>
                             <a href="{{ path('salles_show', { 'id': salle.id }) }}">show</a>
                         </li>
+                        <li>
+                            <a href="{{ path('salles_edit', { 'id': salle.id }) }}">edit</a>
+                        </li>
                     </ul>
                 </td>
             </tr>
@@ -34,5 +37,9 @@
         </tbody>
     </table>
 
-    
+    <ul>
+        <li>
+            <a href="{{ path('salles_new') }}">Create a new salle</a>
+        </li>
+    </ul>
 {% endblock %}

@@ -21,6 +21,9 @@
                         <li>
                             <a href="{{ path('titre_show', { 'id': titre.id }) }}">show</a>
                         </li>
+                        <li>
+                            <a href="{{ path('titre_edit', { 'id': titre.id }) }}">edit</a>
+                        </li>
                     </ul>
                 </td>
             </tr>
@@ -28,5 +31,9 @@
         </tbody>
     </table>
 
-    
+    <ul>
+        <li>
+            <a href="{{ path('titre_new') }}">Create a new titre</a>
+        </li>
+    </ul>
 {% endblock %}

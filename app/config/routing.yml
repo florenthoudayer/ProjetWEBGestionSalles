@@ -1,8 +1,5 @@
-gestion_salle:
+app:
     resource: "@GestionSalleBundle/Controller/"
     type:     annotation
     prefix:   /
 
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation

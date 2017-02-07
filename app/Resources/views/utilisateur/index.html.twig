@@ -27,6 +27,9 @@
                         <li>
                             <a href="{{ path('utilisateur_show', { 'id': utilisateur.id }) }}">show</a>
                         </li>
+                        <li>
+                            <a href="{{ path('utilisateur_edit', { 'id': utilisateur.id }) }}">edit</a>
+                        </li>
                     </ul>
                 </td>
             </tr>
@@ -34,5 +37,9 @@
         </tbody>
     </table>
 
-    
+    <ul>
+        <li>
+            <a href="{{ path('utilisateur_new') }}">Create a new utilisateur</a>
+        </li>
+    </ul>
 {% endblock %}
