@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Salles list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Nbpc</th>
+                <th>Tableau</th>
+                <th>Projecteur</th>
+                <th>Idsalle</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for salle in salles %}
+            <tr>
+                <td><a href="{{ path('salles_show', { 'id': salle.idSalle }) }}">{{ salle.nom }}</a></td>
+                <td>{{ salle.nbPc }}</td>
+                <td>{% if salle.tableau %}Yes{% else %}No{% endif %}</td>
+                <td>{% if salle.projecteur %}Yes{% else %}No{% endif %}</td>
+                <td>{{ salle.idSalle }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('salles_show', { 'id': salle.idSalle }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('salles_edit', { 'id': salle.idSalle }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('salles_new') }}">Create a new salle</a>
+        </li>
+    </ul>
+{% endblock %}

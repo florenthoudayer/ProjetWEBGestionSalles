@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Salle</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Nom</th>
+                <td>{{ salle.nom }}</td>
+            </tr>
+            <tr>
+                <th>Nbpc</th>
+                <td>{{ salle.nbPc }}</td>
+            </tr>
+            <tr>
+                <th>Tableau</th>
+                <td>{% if salle.tableau %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Projecteur</th>
+                <td>{% if salle.projecteur %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Idsalle</th>
+                <td>{{ salle.idSalle }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('salles_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('salles_edit', { 'id': salle.idSalle }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
