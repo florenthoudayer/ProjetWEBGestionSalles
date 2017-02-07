@@ -32,10 +32,7 @@
         {% endfor %}
         </tbody>
     </table>
+        
+    <input style="margin-top: 10px;" type="button" class="btn btn-default" value="Créer une nouvelle reservation" onclick="window.location.href='{{ path('reservation_new') }}';"/>
 
-    <ul>
-        <li>
-            <a href="{{ path('reservation_new') }}">Créer une nouvelle reservation</a>
-        </li>
-    </ul>
 {% endblock %}

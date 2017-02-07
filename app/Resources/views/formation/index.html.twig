@@ -30,10 +30,7 @@
         {% endfor %}
         </tbody>
     </table>
+        
+    <input style="margin-top: 10px;" type="button" class="btn btn-default" value="Créer une nouvelle formation" onclick="window.location.href='{{ path('formation_new') }}';"/>
 
-    <ul>
-        <li>
-            <a href="{{ path('formation_new') }}">Créer une nouvelle formation</a>
-        </li>
-    </ul>
 {% endblock %}

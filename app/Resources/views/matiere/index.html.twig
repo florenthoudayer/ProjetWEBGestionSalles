@@ -30,10 +30,7 @@
         {% endfor %}
         </tbody>
     </table>
+        
+    <input style="margin-top: 10px;" type="button" class="btn btn-default" value="Créer une nouvelle matière" onclick="window.location.href='{{ path('matiere_new') }}';"/>
 
-    <ul>
-        <li>
-            <a href="{{ path('matiere_new') }}">Créer une nouvelle matière</a>
-        </li>
-    </ul>
 {% endblock %}

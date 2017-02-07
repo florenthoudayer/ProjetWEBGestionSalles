@@ -36,10 +36,7 @@
         {% endfor %}
         </tbody>
     </table>
+        
+    <input style="margin-top: 10px;" type="button" class="btn btn-default" value="Créer une nouvelle salle" onclick="window.location.href='{{ path('salles_new') }}';"/>
 
-    <ul>
-        <li>
-            <a href="{{ path('salles_new') }}">Créer une nouvelle salle</a>
-        </li>
-    </ul>
 {% endblock %}

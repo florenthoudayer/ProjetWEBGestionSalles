@@ -36,11 +36,8 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('utilisateur_new') }}">Créer un nouveau utilisateur</a>
-        </li>
-    </ul>
+        
+    <input style="margin-top: 10px;" type="button" class="btn btn-default" value="Créer un nouvel utilisateur" onclick="window.location.href='{{ path('utilisateur_new') }}';"/>
+       
 {% endblock %}
 

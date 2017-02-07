@@ -30,10 +30,7 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('titre_new') }}">Créer un nouveau titre</a>
-        </li>
-    </ul>
+        
+    <input style="margin-top: 10px;" type="button" class="btn btn-default" value="Créer un nouveau titre" onclick="window.location.href='{{ path('titre_new') }}';"/>
+        
 {% endblock %}
