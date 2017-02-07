@@ -4,23 +4,69 @@
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />       
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />   
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
 
-        <!-- Optional theme -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-        <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.css">
-  
-        <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-       
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
        
     </head>
     <body>
+        {% block header %}
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                  <div class="navbar-header">
+                    <a class="navbar-brand" href="{{ path('home') }}">Projet Web Gestion des salles de l'IMIE</a>
+                  </div>
+                  <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Reservation<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ path('home') }}">Liste des reservations</a></li>
+                            <li><a href="{{ path('reservation_new') }}">Créer une réservation</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Utilisateur<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ path('utilisateur_index') }}">Liste des utilisateurs</a></li>
+                            <li><a href="{{ path('utilisateur_new') }}">Créer un utilisateur</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Salle<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ path('salles_index') }}">Liste des salles</a></li>
+                            <li><a href="{{ path('salles_new') }}">Créer une salle</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Formation<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ path('formation_index') }}">Liste des formations</a></li>
+                            <li><a href="{{ path('formation_new') }}">Créer une formation</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Matière<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ path('matiere_index') }}">Liste des matières</a></li>
+                            <li><a href="{{ path('matiere_new') }}">Créer une matière</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Titre<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ path('titre_index') }}">Liste des titres</a></li>
+                            <li><a href="{{ path('titre_new') }}">Créer un titre</a></li>
+                        </ul>
+                    </li>
+                  </ul>
+                </div>
+            </nav>
+        {% endblock %}
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
