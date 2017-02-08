@@ -3,7 +3,7 @@
 {% block body %}
     <h1>Liste des Utilisateurs</h1>
 
-    <table id="myUserTable" class="table-bordered" style="width: 100%;">
+    <table id="myUserTable" class="table-bordered" style="width: 80%;">
         <thead>
             <tr>
                 <th>Nom</th>
@@ -37,7 +37,7 @@
         </tbody>
     </table>
         
-    <input style="margin-top: 10px;" type="button" class="btn btn-default" value="Créer un nouvel utilisateur" onclick="window.location.href='{{ path('utilisateur_new') }}';"/>
+        <input id="c1" style="margin-top: 10px;" type="button" class="btn btn-default" value="Créer un nouvel utilisateur" onclick="window.location.href='{{ path('utilisateur_new') }}';"/>
        
 {% endblock %}
 

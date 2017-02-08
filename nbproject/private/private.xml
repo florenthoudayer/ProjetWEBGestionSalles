@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/xampp/htdocs/ProjetWEBGestionSalles/app/Resources/views/salles/index.html.twig</file>
+            <file>file:/C:/xampp/htdocs/ProjetWEBGestionSalles/app/Resources/views/utilisateur/index.html.twig</file>
+            <file>file:/C:/xampp/htdocs/ProjetWEBGestionSalles/src/GestionSalleBundle/Controller/ReservationController.php</file>
+            <file>file:/C:/xampp/htdocs/ProjetWEBGestionSalles/app/Resources/views/utilisateur/new.html.twig</file>
+            <file>file:/C:/xampp/htdocs/ProjetWEBGestionSalles/app/Resources/views/utilisateur/show.html.twig</file>
+            <file>file:/C:/xampp/htdocs/ProjetWEBGestionSalles/app/Resources/views/reservation/index.html.twig</file>
+            <file>file:/C:/xampp/htdocs/ProjetWEBGestionSalles/app/Resources/views/titre/index.html.twig</file>
+            <file>file:/C:/xampp/htdocs/ProjetWEBGestionSalles/src/GestionSalleBundle/Controller/MatiereController.php</file>
+            <file>file:/C:/xampp/htdocs/ProjetWEBGestionSalles/src/GestionSalleBundle/Controller/TitreController.php</file>
+            <file>file:/C:/xampp/htdocs/ProjetWEBGestionSalles/app/Resources/views/utilisateur/edit.html.twig</file>
+            <file>file:/C:/xampp/htdocs/ProjetWEBGestionSalles/src/GestionSalleBundle/Controller/UtilisateurController.php</file>
+            <file>file:/C:/xampp/htdocs/ProjetWEBGestionSalles/src/GestionSalleBundle/Controller/FormationController.php</file>
+            <file>file:/C:/xampp/htdocs/ProjetWEBGestionSalles/app/Resources/views/formation/index.html.twig</file>
+            <file>file:/C:/xampp/htdocs/ProjetWEBGestionSalles/app/Resources/views/titre/show.html.twig</file>
+            <file>file:/C:/xampp/htdocs/ProjetWEBGestionSalles/app/Resources/views/base.html.twig</file>
+            <file>file:/C:/xampp/htdocs/ProjetWEBGestionSalles/src/GestionSalleBundle/Controller/SallesController.php</file>
+            <file>file:/C:/xampp/htdocs/ProjetWEBGestionSalles/app/Resources/views/matiere/index.html.twig</file>
+        </group>
+    </open-files>
 </project-private>

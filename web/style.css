@@ -1,9 +1,16 @@
 body {
-    background-color: #42b0f4;
+    background-color: white;
+    background-image: url("img/webbackground.jpg");
+    background-size: 100%;
 }
 
 table {
     background-color: white;
+    margin-left: 125px;
+}
+
+#c1 {
+    margin-left: 125px;
 }
 
 
