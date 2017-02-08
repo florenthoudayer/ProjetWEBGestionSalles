@@ -4,7 +4,7 @@
 {% block body %}
     <h1>Salle</h1>
 
-    <table>
+    <table  id="t2" class="table-bordered">
         <tbody>
             <tr>
                 <th>Nom</th>
@@ -31,14 +31,14 @@
 
     <ul>
         <li>
-            <a href="{{ path('salles_index') }}">Back to the list</a>
+            <a style="color: black;" href="{{ path('salles_index') }}">Retour à la liste</a>
         </li>
         <li>
-            <a href="{{ path('salles_edit', { 'id': salle.id }) }}">Edit</a>
+            <a style="color: black;" href="{{ path('salles_edit', { 'id': salle.id }) }}">Modifier</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" value="Supprimer">
             {{ form_end(delete_form) }}
         </li>
     </ul>

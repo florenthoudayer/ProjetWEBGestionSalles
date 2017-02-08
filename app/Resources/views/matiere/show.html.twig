@@ -4,7 +4,7 @@
 {% block body %}
     <h1>Matiere</h1>
 
-    <table>
+    <table id="t2" class="table-bordered">
         <tbody>
             <tr>
                 <th>Matiere</th>
@@ -19,10 +19,10 @@
 
     <ul>
         <li>
-            <a href="{{ path('matiere_index') }}">Back to the list</a>
+            <a style="color: black;" href="{{ path('matiere_index') }}">Retour à la liste</a>
         </li>
         <li>
-            <a href="{{ path('matiere_edit', { 'id': matiere.id }) }}">Edit</a>
+            <a style="color: black;" href="{{ path('matiere_edit', { 'id': matiere.id }) }}">Modifier</a>
         </li>
         <li>
             {{ form_start(delete_form) }}

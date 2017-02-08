@@ -63,4 +63,10 @@ class Titre
     {
         return $this->id;
     }
+    
+    public function __toString()
+    {
+        $nomtitre = $this->titre;
+        return $nomtitre;
+    }
 }

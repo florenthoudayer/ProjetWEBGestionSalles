@@ -2,18 +2,18 @@
 {% block title %}Création d'Utilisateur{% endblock %}
 {% block body %}
     <h1>Création d'Utilisateur</h1>
-    <div class="col-sm-2">
+    <div class="col-sm-3">
         <ul>
             <li>
                 <a style="color: white;" href="{{ path('utilisateur_index') }}">Retour à la liste</a>
             </li>
         </ul>
     </div>
-    <div class="col-sm-8">
+    <div class="col-sm-6">
         {{ form_start(form) }}
             {{ form_widget(form) }}
             <input class="btn btn-default" type="submit" value="Créer" />
         {{ form_end(form) }}
     </div>
-    <div class="col-sm-2"></div>        
+    <div class="col-sm-3"></div>        
 {% endblock %}

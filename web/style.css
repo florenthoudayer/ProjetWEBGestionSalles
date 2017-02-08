@@ -4,19 +4,23 @@ body {
     background-size: 100%;
 }
 
-table {
+#t1 {
     background-color: white;
     margin-left: 125px;
+}
+
+#t2 {
+    background-color: white;
+    width: 50%;
+    margin-left: 300px;
 }
 
 #c1 {
     margin-left: 125px;
 }
 
-form {
-    position: absolute;
-    right: 100px;
-    left: 100px;
+#s1 {
+    margin-left: 35px;
 }
 
 
