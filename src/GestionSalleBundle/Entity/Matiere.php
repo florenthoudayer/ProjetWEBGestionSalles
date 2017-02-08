@@ -119,4 +119,10 @@ class Matiere
     {
         return $this->idUtilisateur;
     }
+    
+    public function __toString()
+    {
+        $nommatiere = $this->matiere;
+        return $nommatiere;
+    }
 }

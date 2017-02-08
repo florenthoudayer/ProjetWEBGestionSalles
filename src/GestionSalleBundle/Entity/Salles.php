@@ -156,4 +156,10 @@ class Salles
     {
         return $this->id;
     }
+    
+    public function __toString()
+    {
+        $nomsalle = $this->nom;
+        return $nomsalle;
+    }
 }

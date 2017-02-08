@@ -272,4 +272,10 @@ class Utilisateur
     {
         return $this->idMatiere;
     }
+    
+    public function __toString()
+    {
+        $nomprenom = $this->nom.' '.$this->prenom;
+        return $nomprenom;
+    }
 }

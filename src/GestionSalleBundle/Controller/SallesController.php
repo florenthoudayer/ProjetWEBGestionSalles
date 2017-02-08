@@ -41,7 +41,7 @@ class SallesController extends Controller
      */
     public function newAction(Request $request)
     {
-        $salle = new Salle();
+        $salle = new Salles();
         $form = $this->createForm('GestionSalleBundle\Form\SallesType', $salle);
         $form->handleRequest($request);
 

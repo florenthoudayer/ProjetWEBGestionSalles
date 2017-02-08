@@ -13,4 +13,13 @@ table {
     margin-left: 125px;
 }
 
+form {
+    position: absolute;
+    right: 100px;
+    left: 100px;
+}
+
+
+
+
 

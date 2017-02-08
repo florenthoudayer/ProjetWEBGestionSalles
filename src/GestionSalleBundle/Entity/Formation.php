@@ -63,4 +63,10 @@ class Formation
     {
         return $this->id;
     }
+    
+    public function __toString()
+    {
+        $nomformation = $this->formation;
+        return $nomformation;
+    }
 }
