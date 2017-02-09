@@ -18,21 +18,21 @@
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                   <div class="navbar-header">
-                    <a class="navbar-brand" href="{{ path('home') }}">Projet Web Gestion des salles de l'IMIE</a>
+                    <a class="navbar-brand" href="{{ path('reservation_index') }}">Projet Web Gestion des salles de l'IMIE</a>
                   </div>
                   <ul class="nav navbar-nav">
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Reservation<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{ path('home') }}">Liste des reservations</a></li>
+                            <li><a href="{{ path('reservation_index') }}">Liste des reservations</a></li>
                             <li><a href="{{ path('reservation_new') }}">Créer une réservation</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Utilisateur<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{ path('utilisateur_index') }}">Liste des utilisateurs</a></li>
-                            <li><a href="{{ path('utilisateur_new') }}">Créer un utilisateur</a></li>
+                            <li><a href="{{ path('user_index') }}">Liste des utilisateurs</a></li>
+                            <li><a href="{{ path('user_new') }}">Créer un utilisateur</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -63,7 +63,7 @@
                             <li><a href="{{ path('titre_new') }}">Créer un titre</a></li>
                         </ul>
                     </li>
-                    <a href="#" style="position: absolute; right: 10px; top: 15px;">Deconnexion</a>
+                    <a href="{{ path('logout') }}" style="position: absolute; right: 10px; top: 15px;">Deconnexion</a>
                   </ul>
                 </div>
             </nav>

@@ -3,7 +3,7 @@
 {% block body %}
     <h1>Liste des utilisateurs</h1>
 
-    <table>
+    <table id="t1" class="table-bordered" style="width: 80%;">
         <thead>
             <tr>
                 <th>Id</th>
@@ -41,9 +41,6 @@
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('user_new') }}">Créer un nouvel utilisateur</a>
-        </li>
-    </ul>
+    <input id="c1" style="margin-top: 10px;" type="button" class="btn btn-default" value="Créer un nouvel utilisateur" onclick="window.location.href='{{ path('user_new') }}';"/>
+
 {% endblock %}
