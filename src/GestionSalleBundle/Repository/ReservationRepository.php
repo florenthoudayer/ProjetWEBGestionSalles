@@ -43,4 +43,19 @@ public function findWeekStud($id) {
             ->getQuery()
             ->execute();
     }
+
+
+
+public function findWeek() {
+    $debut = \date("y").'-'.\date("m").'-'.(\date("d")+7);
+    $fin = \date("y").'-'.\date("m").'-'.(\date("d"));
+        return $this->createQueryBuilder('p')
+            ->where('p.dateDebut < :datedudebut')
+            ->setParameter('datedudebut', $debut)
+            ->andWhere('p.dateFin > :datedelafin')
+            ->setParameter('datedelafin', $fin)
+            ->setMaxResults(5)
+            ->getQuery()
+            ->execute();
+    }
 }
