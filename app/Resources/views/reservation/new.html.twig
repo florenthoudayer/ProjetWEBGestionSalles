@@ -6,7 +6,7 @@
     <div class="col-sm-2">
         <ul>
             <li>
-                <a style="color: black;" href="{{ path('home') }}">Retour à la liste</a>
+                <a style="color: black;" href="{{ path('reservation_index') }}">Retour à la liste</a>
             </li>
         </ul>
     </div>
@@ -19,3 +19,13 @@
     <div class="col-sm-2"></div>
 
 {% endblock %}
+{% block javascripts %}
+    <script>
+        $(document).ready(function() {
+            $('.js-datepicker').datepicker({
+                format: 'yyyy-mm-dd'
+            });
+        });
+    </script>
+{% endblock %}
+

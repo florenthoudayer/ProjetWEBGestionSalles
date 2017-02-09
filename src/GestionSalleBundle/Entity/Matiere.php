@@ -33,24 +33,24 @@ class Matiere
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="GestionSalleBundle\Entity\Utilisateur", inversedBy="idMatiere")
+     * @ORM\ManyToMany(targetEntity="GestionSalleBundle\Entity\User", inversedBy="idMatiere")
      * @ORM\JoinTable(name="forme",
      *   joinColumns={
      *     @ORM\JoinColumn(name="id_matiere", referencedColumnName="id")
      *   },
      *   inverseJoinColumns={
-     *     @ORM\JoinColumn(name="id_utilisateur", referencedColumnName="id")
+     *     @ORM\JoinColumn(name="id_user", referencedColumnName="id")
      *   }
      * )
      */
-    private $idUtilisateur;
+    private $idUser;
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->idUtilisateur = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->idUser = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
 
@@ -89,27 +89,27 @@ class Matiere
     }
 
     /**
-     * Add idUtilisateur
+     * Add idUser
      *
-     * @param \GestionSalleBundle\Entity\Utilisateur $idUtilisateur
+     * @param \GestionSalleBundle\Entity\User $idUtilisateur
      *
      * @return Matiere
      */
-    public function addIdUtilisateur(\GestionSalleBundle\Entity\Utilisateur $idUtilisateur)
+    public function addIdUser(\GestionSalleBundle\Entity\User $idUser)
     {
-        $this->idUtilisateur[] = $idUtilisateur;
+        $this->idUser[] = $idUser;
 
         return $this;
     }
 
     /**
-     * Remove idUtilisateur
+     * Remove idser
      *
-     * @param \GestionSalleBundle\Entity\Utilisateur $idUtilisateur
+     * @param \GestionSalleBundle\Entity\User $idUtilisateur
      */
-    public function removeIdUtilisateur(\GestionSalleBundle\Entity\Utilisateur $idUtilisateur)
+    public function removeIdUser(\GestionSalleBundle\Entity\User $idUser)
     {
-        $this->idUtilisateur->removeElement($idUtilisateur);
+        $this->idUser->removeElement($idUser);
     }
 
     /**
@@ -117,9 +117,9 @@ class Matiere
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getIdUtilisateur()
+    public function getIdUser()
     {
-        return $this->idUtilisateur;
+        return $this->idUser;
     }
     
     public function __toString()
