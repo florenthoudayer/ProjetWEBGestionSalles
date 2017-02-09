@@ -17,7 +17,7 @@ class ReservationController extends Controller
     /**
      * Lists all reservation entities.
      *
-     * @Route("/", name="home")
+     * @Route("/", name="reservation_index")
      * @Method("GET")
      */
     public function indexAction()
