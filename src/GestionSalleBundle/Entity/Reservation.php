@@ -7,8 +7,8 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Reservation
  *
- * @ORM\Table(name="reservation", indexes={@ORM\Index(name="FK_reservation_id_salles", columns={"id_salles"}), @ORM\Index(name="FK_reservation_id_formation", columns={"id_formation"}), @ORM\Index(name="FK_reservation_id_matiere", columns={"id_matiere"}), @ORM\Index(name="FK_reservation_id_utilisateur", columns={"id_utilisateur"})})
- * @ORM\Entity
+ * @ORM\Table(name="reservation", indexes={@ORM\Index(name="FK_reservation_id_salles", columns={"id_salles"}), @ORM\Index(name="FK_reservation_id_formation", columns={"id_formation"}), @ORM\Index(name="FK_reservation_id_matiere", columns={"id_matiere"}), @ORM\Index(name="FK_reservation_id_user", columns={"id_user"})})
+ * @ORM\Entity(repositoryClass="GestionSalleBundle\Repository\ReservationRepository")
  */
 class Reservation
 {
@@ -36,14 +36,14 @@ class Reservation
     private $id;
 
     /**
-     * @var \GestionSalleBundle\Entity\Utilisateur
+     * @var \GestionSalleBundle\Entity\User
      *
-     * @ORM\ManyToOne(targetEntity="GestionSalleBundle\Entity\Utilisateur")
+     * @ORM\ManyToOne(targetEntity="GestionSalleBundle\Entity\User")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_utilisateur", referencedColumnName="id")
+     *   @ORM\JoinColumn(name="id_user", referencedColumnName="id")
      * })
      */
-    private $idUtilisateur;
+    private $idUser;
 
     /**
      * @var \GestionSalleBundle\Entity\Salles
@@ -136,27 +136,27 @@ class Reservation
     }
 
     /**
-     * Set idUtilisateur
+     * Set idUser
      *
-     * @param \GestionSalleBundle\Entity\Utilisateur $idUtilisateur
+     * @param \GestionSalleBundle\Entity\User $idUser
      *
      * @return Reservation
      */
-    public function setIdUtilisateur(\GestionSalleBundle\Entity\Utilisateur $idUtilisateur = null)
+    public function setIdUser(\GestionSalleBundle\Entity\User $idUser = null)
     {
-        $this->idUtilisateur = $idUtilisateur;
+        $this->idUser = $idUser;
 
         return $this;
     }
 
     /**
-     * Get idUtilisateur
+     * Get idUser
      *
-     * @return \GestionSalleBundle\Entity\Utilisateur
+     * @return \GestionSalleBundle\Entity\User
      */
-    public function getIdUtilisateur()
+    public function getIdUser()
     {
-        return $this->idUtilisateur;
+        return $this->idUser;
     }
 
     /**
@@ -229,6 +229,12 @@ class Reservation
     public function getIdFormation()
     {
         return $this->idFormation;
+    }
+    
+    public function __toString()
+    {
+        $nomDate = $this->dateDebut;
+        return $nomDate;
     }
     
     
