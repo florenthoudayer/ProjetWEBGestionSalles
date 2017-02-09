@@ -52,7 +52,13 @@ class SallesController extends Controller
 
             return $this->redirectToRoute('salles_show', array('id' => $salle->getId()));
         }
-
+        else
+        {
+            $this->addFlash('error', 'une erreur est survenu veuillez réessayer');
+                
+            return $this->render('salles/new.html.twig', array('salle' => $salle, 
+                                                                 'form' => $form ->createView()));
+        }
         return $this->render('salles/new.html.twig', array(
             'salle' => $salle,
             'form' => $form->createView(),

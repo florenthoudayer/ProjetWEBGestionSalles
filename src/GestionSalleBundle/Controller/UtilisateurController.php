@@ -50,7 +50,13 @@ class UtilisateurController extends Controller
 
             return $this->redirectToRoute('utilisateur_show', array('id' => $utilisateur->getId()));
         }
-
+        else
+        {
+            $this->addFlash('error', 'une erreur est survenu veuillez réessayer');
+                
+            return $this->render('utilisateur/new.html.twig', array('utilisateur' => $utilisateur, 
+                                                                 'form' => $form ->createView()));
+        }  
         return $this->render('utilisateur/new.html.twig', array(
             'utilisateur' => $utilisateur,
             'form' => $form->createView(),

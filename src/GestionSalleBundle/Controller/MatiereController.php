@@ -49,6 +49,13 @@ class MatiereController extends Controller
             $em->flush($matiere);
 
             return $this->redirectToRoute('matiere_show', array('id' => $matiere->getId()));
+        }        
+        else
+        {
+            $this->addFlash('error', 'une erreur est survenu veuillez réessayer');
+                
+            return $this->render('matiere/new.html.twig', array('matiere' => $matiere, 
+                                                                 'form' => $form ->createView()));
         }
 
         return $this->render('matiere/new.html.twig', array(

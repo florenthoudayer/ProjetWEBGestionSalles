@@ -3,12 +3,14 @@
 namespace GestionSalleBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * Formation
  *
  * @ORM\Table(name="formation")
  * @ORM\Entity
+ * @UniqueEntity(fields="formation", message="cette formation existe deja")
  */
 class Formation
 {

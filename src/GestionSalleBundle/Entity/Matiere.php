@@ -3,12 +3,14 @@
 namespace GestionSalleBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * Matiere
  *
  * @ORM\Table(name="matiere")
  * @ORM\Entity
+ * @UniqueEntity(fields="matiere", message="Cette matiere existe deja")
  */
 class Matiere
 {

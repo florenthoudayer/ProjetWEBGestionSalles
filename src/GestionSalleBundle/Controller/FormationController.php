@@ -50,6 +50,13 @@ class FormationController extends Controller
 
             return $this->redirectToRoute('formation_show', array('id' => $formation->getId()));
         }
+        else
+        {
+            $this->addFlash('error', 'une erreur est survenu veuillez réessayer');
+                
+            return $this->render('formation/new.html.twig', array('formation' => $formation, 
+                                                                 'form' => $form ->createView()));
+        }
 
         return $this->render('formation/new.html.twig', array(
             'formation' => $formation,

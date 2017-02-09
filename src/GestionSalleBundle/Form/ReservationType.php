@@ -13,7 +13,12 @@ class ReservationType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('dateDebut')->add('dateFin')->add('idUtilisateur')->add('idSalles')->add('idMatiere')->add('idFormation')        ;
+        $builder->add('dateDebut', null, array('label' => 'Date de début' ,'required' => true))
+                ->add('dateFin', null, array('label' => 'Date de fin' ,'required' => true))
+                ->add('idUtilisateur')
+                ->add('idSalles', null, array('label' => 'id salle' ,'required' => true))
+                ->add('idMatiere', null, array('label' => 'id matiere' ,'required' => true))
+                ->add('idFormation', null, array('label' => 'id formation' ,'required' => true))        ;
     }
     
     /**

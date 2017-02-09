@@ -3,12 +3,14 @@
 namespace GestionSalleBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * Utilisateur
  *
  * @ORM\Table(name="utilisateur", indexes={@ORM\Index(name="FK_utilisateur_id_formation", columns={"id_formation"}), @ORM\Index(name="FK_utilisateur_id_titre", columns={"id_titre"})})
  * @ORM\Entity
+ * @UniqueEntity(fields={"nom", "prenom"}, message="Cet utilisateur existe deja")
  */
 class Utilisateur
 {
@@ -50,9 +52,9 @@ class Utilisateur
     private $id;
 
     /**
-     * @var \GestionSalleBundle\Entity\Formation
+     * @var Formation
      *
-     * @ORM\ManyToOne(targetEntity="GestionSalleBundle\Entity\Formation")
+     * @ORM\ManyToOne(targetEntity="Formation")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="id_formation", referencedColumnName="id")
      * })
@@ -60,9 +62,9 @@ class Utilisateur
     private $idFormation;
 
     /**
-     * @var \GestionSalleBundle\Entity\Titre
+     * @var Titre
      *
-     * @ORM\ManyToOne(targetEntity="GestionSalleBundle\Entity\Titre")
+     * @ORM\ManyToOne(targetEntity="Titre")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="id_titre", referencedColumnName="id")
      * })
@@ -72,7 +74,7 @@ class Utilisateur
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="GestionSalleBundle\Entity\Matiere", mappedBy="idUtilisateur")
+     * @ORM\ManyToMany(targetEntity="Matiere", mappedBy="idUtilisateur")
      */
     private $idMatiere;
 
@@ -194,11 +196,11 @@ class Utilisateur
     /**
      * Set idFormation
      *
-     * @param \GestionSalleBundle\Entity\Formation $idFormation
+     * @param Formation $idFormation
      *
      * @return Utilisateur
      */
-    public function setIdFormation(\GestionSalleBundle\Entity\Formation $idFormation = null)
+    public function setIdFormation(Formation $idFormation = null)
     {
         $this->idFormation = $idFormation;
 
@@ -208,7 +210,7 @@ class Utilisateur
     /**
      * Get idFormation
      *
-     * @return \GestionSalleBundle\Entity\Formation
+     * @return Formation
      */
     public function getIdFormation()
     {
@@ -218,11 +220,11 @@ class Utilisateur
     /**
      * Set idTitre
      *
-     * @param \GestionSalleBundle\Entity\Titre $idTitre
+     * @param Titre $idTitre
      *
      * @return Utilisateur
      */
-    public function setIdTitre(\GestionSalleBundle\Entity\Titre $idTitre = null)
+    public function setIdTitre(Titre $idTitre = null)
     {
         $this->idTitre = $idTitre;
 
@@ -232,7 +234,7 @@ class Utilisateur
     /**
      * Get idTitre
      *
-     * @return \GestionSalleBundle\Entity\Titre
+     * @return Titre
      */
     public function getIdTitre()
     {
@@ -242,11 +244,11 @@ class Utilisateur
     /**
      * Add idMatiere
      *
-     * @param \GestionSalleBundle\Entity\Matiere $idMatiere
+     * @param Matiere $idMatiere
      *
      * @return Utilisateur
      */
-    public function addIdMatiere(\GestionSalleBundle\Entity\Matiere $idMatiere)
+    public function addIdMatiere(Matiere $idMatiere)
     {
         $this->idMatiere[] = $idMatiere;
 
@@ -256,9 +258,9 @@ class Utilisateur
     /**
      * Remove idMatiere
      *
-     * @param \GestionSalleBundle\Entity\Matiere $idMatiere
+     * @param Matiere $idMatiere
      */
-    public function removeIdMatiere(\GestionSalleBundle\Entity\Matiere $idMatiere)
+    public function removeIdMatiere(Matiere $idMatiere)
     {
         $this->idMatiere->removeElement($idMatiere);
     }

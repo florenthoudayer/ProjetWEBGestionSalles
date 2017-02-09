@@ -50,6 +50,13 @@ class ReservationController extends Controller
 
             return $this->redirectToRoute('reservation_show', array('id' => $reservation->getId()));
         }
+        else
+        {
+            $this->addFlash('error', 'une erreur est survenu veuillez réessayer');
+                
+            return $this->render('reservation/new.html.twig', array('reservation' => $reservation, 
+                                                                 'form' => $form ->createView()));
+        }
 
         return $this->render('reservation/new.html.twig', array(
             'reservation' => $reservation,

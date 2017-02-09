@@ -50,6 +50,13 @@ class TitreController extends Controller
 
             return $this->redirectToRoute('titre_show', array('id' => $titre->getId()));
         }
+        else
+        {
+            $this->addFlash('error', 'une erreur est survenu veuillez réessayer');
+                
+            return $this->render('titre/new.html.twig', array('titre' => $titre, 
+                                                                 'form' => $form ->createView()));
+        }        
 
         return $this->render('titre/new.html.twig', array(
             'titre' => $titre,
