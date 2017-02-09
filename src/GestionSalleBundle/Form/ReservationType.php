@@ -1,5 +1,4 @@
 <?php
-
 namespace GestionSalleBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
@@ -20,7 +19,7 @@ class ReservationType extends AbstractType
                 ->add('dateFin', DateType::class, array('widget' => 'single_text',
                         'label' => 'Date de début' ,'required' => true, 'html5' => false,
                         'attr' => ['class' => 'js-datepicker']))
-                ->add('idUtilisateur')
+                ->add('idUser')
                 ->add('idSalles', null, array('label' => 'id salle' ,'required' => true))
                 ->add('idMatiere', null, array('label' => 'id matiere' ,'required' => true))
                 ->add('idFormation', null, array('label' => 'id formation' ,'required' => true));

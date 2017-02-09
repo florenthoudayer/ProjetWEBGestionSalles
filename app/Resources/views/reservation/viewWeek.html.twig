@@ -1,14 +1,14 @@
 {% extends 'base.html.twig' %}
-{% block title %}Liste des Reservations{% endblock %}
-{% block body %}
-    <h1>Liste des Reservations</h1>
 
-    <table id="t1" class="table-bordered" style="width: 80%;">
+{% block body %}
+    <h1>Reservations list</h1>
+
+    <table>
         <thead>
             <tr>
+                <th>Idreservation</th>
                 <th>Datedebut</th>
                 <th>Datefin</th>
-                <th>Id</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -21,10 +21,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('reservation_show', { 'id': reservation.id }) }}">aperçu</a>
+                            <a href="{{ path('reservation_show', { 'id': reservation.id }) }}">show</a>
                         </li>
                         <li>
-                            <a href="{{ path('reservation_edit', { 'id': reservation.id }) }}">modifier</a>
+                            <a href="{{ path('reservation_edit', { 'id': reservation.id }) }}">edit</a>
                         </li>
                     </ul>
                 </td>
@@ -32,7 +32,10 @@
         {% endfor %}
         </tbody>
     </table>
-        
-    <input id="c1" style="margin-top: 10px;" type="button" class="btn btn-default" value="Créer une nouvelle reservation" onclick="window.location.href='{{ path('reservation_new') }}';"/>
 
+    <ul>
+        <li>
+            <a href="{{ path('reservation_new') }}">Create a new reservation</a>
+        </li>
+    </ul>
 {% endblock %}

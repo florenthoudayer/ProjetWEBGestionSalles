@@ -14,7 +14,7 @@ class MatiereType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('matiere', null, array('label' => 'matiere' ,'required' => true))
-                ->add('idUtilisateur')        ;
+                ->add('idUser')        ;
     }
     
     /**
