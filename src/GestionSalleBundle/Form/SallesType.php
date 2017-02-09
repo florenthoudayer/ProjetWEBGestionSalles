@@ -13,7 +13,10 @@ class SallesType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nom')->add('nbPc')->add('tableau')->add('projecteur')        ;
+        $builder->add('nom', null, array('label' => 'Nom salle' ,'required' => true))
+                ->add('nbPc', null, array('label' => 'Nombre de pc' ,'required' => true))
+                ->add('tableau')
+                ->add('projecteur')        ;
     }
     
     /**

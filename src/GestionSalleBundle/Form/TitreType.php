@@ -13,7 +13,7 @@ class TitreType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('titre')        ;
+        $builder->add('titre', null, array('label' => 'Titre' ,'required' => true))        ;
     }
     
     /**

@@ -13,7 +13,7 @@ class FormationType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('formation')        ;
+        $builder->add('formation', null, array('label' => 'formation' ,'required' => true));
     }
     
     /**
