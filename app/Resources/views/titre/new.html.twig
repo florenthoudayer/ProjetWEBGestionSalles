@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+{% block title %}Création de Titre{% endblock %}
+
+{% block body %}
+    <h1>Création de Titre</h1>
+    <div class="col-sm-2">
+        <ul>
+            <li>
+                <a style="color: black;" href="{{ path('titre_index') }}">Retour à la liste</a>
+            </li>
+        </ul>        
+    </div>
+    <div class="col-sm-8">
+        {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <input class="btn btn-default" type="submit" value="Créer" />
+        {{ form_end(form) }}
+    </div>
+    <div class="col-sm-2"></div>    
+{% endblock %}

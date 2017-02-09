@@ -1,0 +1,33 @@
+<?php
+
+namespace GestionSalleBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Titre
+ *
+ * @ORM\Table(name="titre")
+ * @ORM\Entity
+ */
+class Titre
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="titre", type="string", length=25, nullable=true)
+     */
+    private $titre;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+}
+

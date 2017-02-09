@@ -1,28 +1,29 @@
 {% extends 'base.html.twig' %}
+{% block title %}Liste des Matieres{% endblock %}
 
 {% block body %}
-    <h1>Matieres list</h1>
+    <h1>Liste des Matieres</h1>
 
-    <table>
+    <table id="t1" class="table-bordered" style="width: 80%;">
         <thead>
             <tr>
-                <th>Intitule</th>
-                <th>Idmatiere</th>
+                <th>Matiere</th>
+                <th>Id</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for matiere in matieres %}
             <tr>
-                <td><a href="{{ path('matiere_show', { 'id': matiere.idMatiere }) }}">{{ matiere.intitule }}</a></td>
-                <td>{{ matiere.idMatiere }}</td>
+                <td><a href="{{ path('matiere_show', { 'id': matiere.id }) }}">{{ matiere.matiere }}</a></td>
+                <td>{{ matiere.id }}</td>
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('matiere_show', { 'id': matiere.idMatiere }) }}">show</a>
+                            <a href="{{ path('matiere_show', { 'id': matiere.id }) }}">aperçu</a>
                         </li>
                         <li>
-                            <a href="{{ path('matiere_edit', { 'id': matiere.idMatiere }) }}">edit</a>
+                            <a href="{{ path('matiere_edit', { 'id': matiere.id }) }}">modifier</a>
                         </li>
                     </ul>
                 </td>
@@ -30,10 +31,7 @@
         {% endfor %}
         </tbody>
     </table>
+        
+    <input id="c1" style="margin-top: 10px;" type="button" class="btn btn-default" value="Créer une nouvelle matière" onclick="window.location.href='{{ path('matiere_new') }}';"/>
 
-    <ul>
-        <li>
-            <a href="{{ path('matiere_new') }}">Create a new matiere</a>
-        </li>
-    </ul>
 {% endblock %}

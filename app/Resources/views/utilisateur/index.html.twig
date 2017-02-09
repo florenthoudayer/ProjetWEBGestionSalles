@@ -1,32 +1,34 @@
 {% extends 'base.html.twig' %}
-
+{% block title %}Liste des Utilisateurs{% endblock %}
 {% block body %}
-    <h1>Utilisateurs list</h1>
+    <h1>Liste des Utilisateurs</h1>
 
-    <table>
+    <table id="t1" class="table-bordered" style="width: 80%;">
         <thead>
             <tr>
                 <th>Nom</th>
                 <th>Prenom</th>
-                <th>Autorisation</th>
-                <th>Idutilisateur</th>
+                <th>Password</th>
+                <th>Actif</th>
+                <th>Id</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for utilisateur in utilisateurs %}
             <tr>
-                <td><a href="{{ path('utilisateur_show', { 'id': utilisateur.idUtilisateur }) }}">{{ utilisateur.nom }}</a></td>
+                <td><a href="{{ path('utilisateur_show', { 'id': utilisateur.id }) }}">{{ utilisateur.nom }}</a></td>
                 <td>{{ utilisateur.prenom }}</td>
-                <td>{{ utilisateur.autorisation }}</td>
-                <td>{{ utilisateur.idUtilisateur }}</td>
+                <td>{{ utilisateur.mdp }}</td>
+                <td>{% if utilisateur.actif %}Yes{% else %}No{% endif %}</td>
+                <td>{{ utilisateur.id }}</td>
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('utilisateur_show', { 'id': utilisateur.idUtilisateur }) }}">show</a>
+                            <a href="{{ path('utilisateur_show', { 'id': utilisateur.id }) }}">aperçu</a>
                         </li>
                         <li>
-                            <a href="{{ path('utilisateur_edit', { 'id': utilisateur.idUtilisateur }) }}">edit</a>
+                            <a href="{{ path('utilisateur_edit', { 'id': utilisateur.id }) }}">modifier</a>
                         </li>
                     </ul>
                 </td>
@@ -34,10 +36,8 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('utilisateur_new') }}">Create a new utilisateur</a>
-        </li>
-    </ul>
+        
+        <input id="c1" style="margin-top: 10px;" type="button" class="btn btn-default" value="Créer un nouvel utilisateur" onclick="window.location.href='{{ path('utilisateur_new') }}';"/>
+       
 {% endblock %}
+

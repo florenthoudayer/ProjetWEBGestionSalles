@@ -1,28 +1,28 @@
 {% extends 'base.html.twig' %}
-
+{% block title %}Liste des Formations{% endblock %}
 {% block body %}
-    <h1>Formations list</h1>
+    <h1>Liste des Formations</h1>
 
-    <table>
+    <table id="t1" class="table-bordered" style="width: 80%;">
         <thead>
             <tr>
-                <th>Nom</th>
-                <th>Idformation</th>
+                <th>Formation</th>
+                <th>Id</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for formation in formations %}
             <tr>
-                <td><a href="{{ path('formation_show', { 'id': formation.idFormation }) }}">{{ formation.nom }}</a></td>
-                <td>{{ formation.idFormation }}</td>
+                <td><a href="{{ path('formation_show', { 'id': formation.id }) }}">{{ formation.formation }}</a></td>
+                <td>{{ formation.id }}</td>
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('formation_show', { 'id': formation.idFormation }) }}">show</a>
+                            <a href="{{ path('formation_show', { 'id': formation.id }) }}">aperçu</a>
                         </li>
                         <li>
-                            <a href="{{ path('formation_edit', { 'id': formation.idFormation }) }}">edit</a>
+                            <a href="{{ path('formation_edit', { 'id': formation.id }) }}">modifier</a>
                         </li>
                     </ul>
                 </td>
@@ -30,10 +30,7 @@
         {% endfor %}
         </tbody>
     </table>
+        
+    <input id="c1" style="margin-top: 10px;" type="button" class="btn btn-default" value="Créer une nouvelle formation" onclick="window.location.href='{{ path('formation_new') }}';"/>
 
-    <ul>
-        <li>
-            <a href="{{ path('formation_new') }}">Create a new formation</a>
-        </li>
-    </ul>
 {% endblock %}

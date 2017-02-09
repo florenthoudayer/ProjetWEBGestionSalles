@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+{% block title %}Titre{% endblock %}
+
+{% block body %}
+    <h1>Titre</h1>
+
+    <table id="t2" class="table-bordered">
+        <tbody>
+            <tr>
+                <th>Titre</th>
+                <td>{{ titre.titre }}</td>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ titre.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a style="color: black;" href="{{ path('titre_index') }}">Retour à la liste</a>
+        </li>
+        <li>
+            <a style="color: black;" href="{{ path('titre_edit', { 'id': titre.id }) }}">Modifier</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

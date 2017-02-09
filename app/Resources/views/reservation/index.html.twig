@@ -1,30 +1,30 @@
 {% extends 'base.html.twig' %}
-
+{% block title %}Liste des Reservations{% endblock %}
 {% block body %}
-    <h1>Reservations list</h1>
+    <h1>Liste des Reservations</h1>
 
-    <table>
+    <table id="t1" class="table-bordered" style="width: 80%;">
         <thead>
             <tr>
-                <th>Idreservation</th>
                 <th>Datedebut</th>
                 <th>Datefin</th>
+                <th>Id</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for reservation in reservations %}
             <tr>
-                <td><a href="{{ path('reservation_show', { 'id': reservation.idReservation }) }}">{{ reservation.idReservation }}</a></td>
-                <td>{{ reservation.dateDebut|date('Y-m-d') }}</td>
+                <td><a href="{{ path('reservation_show', { 'id': reservation.id }) }}">{{ reservation.dateDebut }}</a></td>
                 <td>{% if reservation.dateFin %}{{ reservation.dateFin|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ reservation.id }}</td>
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('reservation_show', { 'id': reservation.idReservation }) }}">show</a>
+                            <a href="{{ path('reservation_show', { 'id': reservation.id }) }}">aperçu</a>
                         </li>
                         <li>
-                            <a href="{{ path('reservation_edit', { 'id': reservation.idReservation }) }}">edit</a>
+                            <a href="{{ path('reservation_edit', { 'id': reservation.id }) }}">modifier</a>
                         </li>
                     </ul>
                 </td>
@@ -32,10 +32,7 @@
         {% endfor %}
         </tbody>
     </table>
+        
+    <input id="c1" style="margin-top: 10px;" type="button" class="btn btn-default" value="Créer une nouvelle reservation" onclick="window.location.href='{{ path('reservation_new') }}';"/>
 
-    <ul>
-        <li>
-            <a href="{{ path('reservation_new') }}">Create a new reservation</a>
-        </li>
-    </ul>
 {% endblock %}

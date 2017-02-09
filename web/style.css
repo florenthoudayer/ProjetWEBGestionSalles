@@ -1,0 +1,29 @@
+body {
+    background-color: white;
+    background-image: url("img/webbackground.jpg");
+    background-size: 100%;
+}
+
+#t1 {
+    background-color: white;
+    margin-left: 125px;
+}
+
+#t2 {
+    background-color: white;
+    width: 50%;
+    margin-left: 300px;
+}
+
+#c1 {
+    margin-left: 125px;
+}
+
+#s1 {
+    margin-left: 35px;
+}
+
+
+
+
+

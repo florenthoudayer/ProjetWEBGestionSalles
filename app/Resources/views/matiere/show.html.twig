@@ -1,27 +1,28 @@
 {% extends 'base.html.twig' %}
+{% block title %}Matiere{% endblock %}
 
 {% block body %}
     <h1>Matiere</h1>
 
-    <table>
+    <table id="t2" class="table-bordered">
         <tbody>
             <tr>
-                <th>Intitule</th>
-                <td>{{ matiere.intitule }}</td>
+                <th>Matiere</th>
+                <td>{{ matiere.matiere }}</td>
             </tr>
             <tr>
-                <th>Idmatiere</th>
-                <td>{{ matiere.idMatiere }}</td>
+                <th>Id</th>
+                <td>{{ matiere.id }}</td>
             </tr>
         </tbody>
     </table>
 
     <ul>
         <li>
-            <a href="{{ path('matiere_index') }}">Back to the list</a>
+            <a style="color: black;" href="{{ path('matiere_index') }}">Retour à la liste</a>
         </li>
         <li>
-            <a href="{{ path('matiere_edit', { 'id': matiere.idMatiere }) }}">Edit</a>
+            <a style="color: black;" href="{{ path('matiere_edit', { 'id': matiere.id }) }}">Modifier</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
