@@ -3,24 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/snipe/projetwebgestionsallesclone/app/Resources/views/formation/new.html.twig</file>
-            <file>file:/C:/Users/snipe/projetwebgestionsallesclone/app/Resources/views/reservation/index.html.twig</file>
-            <file>file:/C:/Users/snipe/projetwebgestionsallesclone/src/GestionSalleBundle/Controller/UserController.php</file>
-            <file>file:/C:/Users/snipe/projetwebgestionsallesclone/app/Resources/views/reservation/new.html.twig</file>
-            <file>file:/C:/Users/snipe/projetwebgestionsallesclone/app/Resources/views/matiere/edit.html.twig</file>
-            <file>file:/C:/Users/snipe/projetwebgestionsallesclone/app/Resources/views/user/edit.html.twig</file>
-            <file>file:/C:/Users/snipe/projetwebgestionsallesclone/app/Resources/views/reservation/viewWeek.html.twig</file>
-            <file>file:/C:/Users/snipe/projetwebgestionsallesclone/src/GestionSalleBundle/Controller/DefaultController.php</file>
-            <file>file:/C:/Users/snipe/projetwebgestionsallesclone/app/Resources/views/matiere/index.html.twig</file>
-            <file>file:/C:/Users/snipe/projetwebgestionsallesclone/app/Resources/views/user/new.html.twig</file>
-            <file>file:/C:/Users/snipe/projetwebgestionsallesclone/src/GestionSalleBundle/Resources/views/Default/index.html.twig</file>
-            <file>file:/C:/Users/snipe/projetwebgestionsallesclone/app/Resources/views/formation/index.html.twig</file>
-            <file>file:/C:/Users/snipe/projetwebgestionsallesclone/app/Resources/views/formation/edit.html.twig</file>
-            <file>file:/C:/Users/snipe/projetwebgestionsallesclone/app/Resources/views/user/index.html.twig</file>
-            <file>file:/C:/Users/snipe/projetwebgestionsallesclone/src/GestionSalleBundle/Resources/views/Default/login.html.twig</file>
-            <file>file:/C:/Users/snipe/projetwebgestionsallesclone/app/Resources/views/reservation/edit.html.twig</file>
-            <file>file:/C:/Users/snipe/projetwebgestionsallesclone/app/Resources/views/base.html.twig</file>
-            <file>file:/C:/Users/snipe/projetwebgestionsallesclone/app/Resources/views/user/show.html.twig</file>
+            <file>file:/C:/xampp/htdocs/projetwebgestionsallesclone/app/Resources/views/titre/new.html.twig</file>
+            <file>file:/C:/xampp/htdocs/projetwebgestionsallesclone/src/GestionSalleBundle/Resources/views/Default/login.html.twig</file>
+            <file>file:/C:/xampp/htdocs/projetwebgestionsallesclone/app/autoload.php</file>
+            <file>file:/C:/xampp/htdocs/projetwebgestionsallesclone/web/style.css</file>
+            <file>file:/C:/xampp/htdocs/projetwebgestionsallesclone/app/Resources/views/user/new.html.twig</file>
+            <file>file:/C:/xampp/htdocs/projetwebgestionsallesclone/app/Resources/views/base2.html.twig</file>
+            <file>file:/C:/xampp/htdocs/projetwebgestionsallesclone/app/config/config.yml</file>
+            <file>file:/C:/xampp/htdocs/projetwebgestionsallesclone/app/Resources/views/user/index.html.twig</file>
+            <file>file:/C:/xampp/htdocs/projetwebgestionsallesclone/app/Resources/views/titre/edit.html.twig</file>
+            <file>file:/C:/xampp/htdocs/projetwebgestionsallesclone/app/Resources/views/base.html.twig</file>
+            <file>file:/C:/xampp/htdocs/projetwebgestionsallesclone/app/Resources/views/user/edit.html.twig</file>
+            <file>file:/C:/xampp/htdocs/projetwebgestionsallesclone/app/Resources/views/user/show.html.twig</file>
+            <file>file:/C:/xampp/htdocs/projetwebgestionsallesclone/app/Resources/views/titre/show.html.twig</file>
+            <file>file:/C:/xampp/htdocs/projetwebgestionsallesclone/app/Resources/views/titre/index.html.twig</file>
         </group>
     </open-files>
 </project-private>
