@@ -23,6 +23,16 @@ body {
     margin-left: 35px;
 }
 
+#divlog {
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 400px;
+    height: 200px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+
 
 
 
