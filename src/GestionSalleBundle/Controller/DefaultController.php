@@ -20,7 +20,7 @@ class DefaultController extends Controller
   public function loginAction(Request $request)
   {
     if ($this->get('security.authorization_checker')->isGranted('ROLE_ADMIN')) {
-      return $this->redirectToRoute('reservation_index');
+      return $this->redirectToRoute('defaultadmin');
     }
     if ($this->get('security.authorization_checker')->isGranted('ROLE_USER')) {
       $user = new User();
@@ -72,6 +72,22 @@ class DefaultController extends Controller
         //$reservations = $em->getRepository('gestionBundle:Reservation')->findAll();
 
         return $this->render('reservation/viewWeek.html.twig', array(
+            'reservations' => $reservations,
+        ));
+  }
+  
+  /**
+    *@Route("/defaultadmin/", name="defaultadmin")
+     * @Security("has_role('ROLE_ADMIN')")
+    */
+  public function defaultAdminAction(Request $request)
+  {
+        $em = $this->getDoctrine()->getManager();
+          $reservations = $em->getRepository('GestionSalleBundle:Reservation')->findWeekAdmin();
+
+        //$reservations = $em->getRepository('gestionBundle:Reservation')->findAll();
+
+        return $this->render('reservation/viewWeekAdmin.html.twig', array(
             'reservations' => $reservations,
         ));
   }

@@ -2,10 +2,12 @@
 
 namespace GestionSalleBundle\Controller;
 
+use GestionSalleBundle\Entity\Titre;
 use GestionSalleBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * User controller.
@@ -23,16 +25,24 @@ class UserController extends Controller
      */
     public function newAdminAction()
     {
-        $user = new user();//('yoda', 'pouet', array('ROLE_ADMIN'), true, true, true, true);
-        $user->setNom('yda');
-        $user->setPrenom('yda');
-        $user->setUsername('yda');
-        $user->setPassword('pouet');
+        $user = new user();
+        $user->setNom('ad');
+        $user->setPrenom('min');
+        $user->setUsername('admin');
+        $user->setPassword('admin');
         $user->setSalt('');
         $user->setRoles(array('ROLE_ADMIN'));
+        $titre1 = new Titre();
+        $titre1->setTitre('eleve'); 
+        $titre2 = new Titre();
+        $titre2->setTitre('professeur'); 
         $em = $this->getDoctrine()->getManager();
         $em->persist($user);
         $em->flush($user);
+        $em->persist($titre1);
+        $em->flush($titre1);
+        $em->persist($titre2);
+        $em->flush($titre2);
         return $this->redirectToRoute('user_index');
 
 

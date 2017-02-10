@@ -46,7 +46,7 @@ public function findWeekStud($id) {
 
 
 
-public function findWeek() {
+public function findWeekAdmin() {
     $debut = \date("y").'-'.\date("m").'-'.(\date("d")+7);
     $fin = \date("y").'-'.\date("m").'-'.(\date("d"));
         return $this->createQueryBuilder('p')

@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Calendrier des reservations</h1>
+    <div class="container">
+    <div id="calendar"></div>
+    </div>
+
+    <script>$
+
+    $(document).ready(function() {
+        
+        $('#calendar').fullCalendar({
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month'
+            },
+            selectable: true,
+            selectHelper: true,
+    editable: true,
+    weekends:false,
+    eventLimit: true,
+    selectable: true,
+            select: function(start, end) {
+                //var url = "127.0.0.1/reservation/newdate/"+start+"/"+end;
+                //window.open = url;
+                console.log('url');
+            },
+    events: [
+      {% for reservation in reservations %}
+      {
+        title: '{{ reservation.idFormation }}',
+        url: "{{ path('reservation_show', { 'id': reservation.id }) }}",
+        start: '{% if reservation.dateDebut %}{{ reservation.dateDebut|date('Y') }}{% endif %}-{% if reservation.dateDebut %}{{ reservation.dateDebut|date('m') }}{% endif %}-{% if reservation.dateDebut %}{{ reservation.dateDebut|date('d') }}{% endif %}',
+        end: '{% if reservation.dateFin %}{{ reservation.dateFin|date('Y') }}{% endif %}-{% if reservation.dateFin %}{{ reservation.dateFin|date('m') }}{% endif %}-{% if reservation.dateFin %}{{ reservation.dateFin|date('d') }}{% endif %}'
+      },
+        {% endfor %}
+    ]
+  });
+})</script>
+{% endblock %}
