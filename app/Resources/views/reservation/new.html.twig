@@ -22,9 +22,14 @@
 {% block javascripts %}
     <script>
         $(document).ready(function() {
-            $('.js-datepicker').datepicker({
-                format: 'yyyy-mm-dd'
+            $(".js-datepicker").datepicker({
+                dateFormat: "yy-mm-dd"
             });
+            // Getter
+            var dateFormat = $( ".js-datepicker" ).datepicker( "option", "dateFormat" );
+
+            // Setter
+            $( ".js-datepicker" ).datepicker( "option", "dateFormat", "yy-mm-dd" );
         });
     </script>
 {% endblock %}
